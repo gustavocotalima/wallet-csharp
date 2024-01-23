@@ -24,7 +24,8 @@ public class Wallet<T> where T : Currency
     {
         if (fromCurrency.Amount < amount)
         {
-            throw new Exception("Insufficient funds");
+            Console.WriteLine($"Insufficient funds to exchange {amount} {fromCurrency.Name} to {toCurrency.Name}.");
+            return;
         }
         Console.WriteLine($"Exchanging {amount} {fromCurrency.Name} to {toCurrency.Name}...");
         fromCurrency.Amount -= amount; 
